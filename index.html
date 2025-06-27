@@ -162,6 +162,16 @@
     display: block;
   }
 }
+.navbar-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  background: none;
+  border: none;
+  color: black;
+  z-index: 1100;
+}
 
 
   </style>
@@ -184,6 +194,29 @@
     cards.forEach(card => observer.observe(card));
   });
 </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const collapse = document.querySelector('#navbarNav');
+    const closeBtn = document.querySelector('.navbar-close');
+    const links = document.querySelectorAll('.nav-link');
+
+    toggler.addEventListener('click', () => {
+      collapse.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      collapse.classList.remove('show');
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        collapse.classList.remove('show');
+      });
+    });
+  });
+</script>
+
 
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -193,7 +226,7 @@
       &#9776;
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <button class="btn-close d-lg-none ms-auto me-3 mt-2" aria-label="Close menu"></button>
+      <button class="navbar-close d-lg-none" aria-label="Close">&times;</button>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
@@ -203,6 +236,7 @@
     </div>
   </div>
 </nav>
+
 
   <header class="hero-image"></header>
 
