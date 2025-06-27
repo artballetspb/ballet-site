@@ -284,16 +284,17 @@
       }
     });
   });
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.querySelector('.gallery-scroll');
+    document.querySelector('.gallery-arrow.left').addEventListener('click', () => {
+      gallery.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+    document.querySelector('.gallery-arrow.right').addEventListener('click', () => {
+      gallery.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  });
 </script>
-document.addEventListener("DOMContentLoaded", function () {
-  const gallery = document.querySelector('.gallery-scroll');
-  document.querySelector('.gallery-arrow.left').addEventListener('click', () => {
-    gallery.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-  document.querySelector('.gallery-arrow.right').addEventListener('click', () => {
-    gallery.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-});
 
 
 <body>
