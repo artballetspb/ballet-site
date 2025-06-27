@@ -245,7 +245,9 @@
 
   </style>
 </head>
-  <script>
+</style>
+
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll('.course-card');
 
@@ -253,7 +255,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-visible');
-          observer.unobserve(entry.target); // Анимация один раз
+          observer.unobserve(entry.target); // animate only once
         }
       });
     }, {
@@ -263,7 +265,12 @@
     cards.forEach(card => observer.observe(card));
   });
 </script>
-  <script>
+
+<script>
+  // second script here
+</script>
+
+</head>
   document.addEventListener("DOMContentLoaded", function () {
     const toggler = document.querySelector('.navbar-toggler');
     const collapse = document.querySelector('#navbarNav');
