@@ -195,21 +195,22 @@
 </section>
 
 <!-- Gallery Preview -->
+<!-- Gallery Preview -->
 <section id="gallery" class="container my-5">
   <h2 class="text-center">Gallery Preview</h2>
   <div class="gallery-scroll">
     <div id="gallery-wrapper">
-      <img src="bathroom1.jpg" alt="Bathroom 1">
-      <img src="bathroom2.jpg" alt="Bathroom 2">
-      <img src="bathroom3.jpg" alt="Bathroom 3">
-      <img src="bathroom4.jpg" alt="Bathroom 4">
+      <img src="ballet1.jpg" alt="Ballet 1">
+      <img src="ballet2.jpg" alt="Ballet 2">
+      <img src="ballet3.jpg" alt="Ballet 3">
+      <img src="ballet4.jpg" alt="Ballet 4">
+      <img src="ballet5.jpg" alt="Ballet 5"> 
     </div>
   </div>
   <div class="text-center mt-3">
     <a href="gallery.html" class="btn btn-dark">Learn More</a>
   </div>
 </section>
-
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
   <div class="container">
@@ -237,14 +238,24 @@
   </div>
 </section>
 
-<script>
-  gsap.to("#gallery-wrapper", {
-    x: "-50%",
-    duration: 25,
-    repeat: -1,
-    ease: "linear"
-  });
-</script>
+.gallery-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+#gallery-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 1200px;
+}
+
+#gallery-wrapper img {
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
