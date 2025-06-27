@@ -182,7 +182,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const cards = document.querySelectorAll('.course-card');
-
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -191,7 +190,6 @@
           }
         });
       }, { threshold: 0.2 });
-
       cards.forEach(card => observer.observe(card));
 
       const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -211,9 +209,7 @@
       });
 
       toggler.addEventListener('click', () => {
-        if (!navbarCollapse.classList.contains('show')) {
-          setTimeout(() => navbarCollapse.classList.add('show'), 10);
-        }
+        setTimeout(() => navbarCollapse.classList.add('show'), 10);
       });
     });
   </script>
