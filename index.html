@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elena Malysheva - Vaganova Technique</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <style>
     @font-face {
       font-family: 'NeueHaasGrotText-55Roman';
@@ -23,13 +22,9 @@
     h1, h2, h3 {
       font-family: 'NeueHaasGrotText-55Roman', sans-serif;
     }
-
-    /* Reusable Spacing Class for Headings */
     .spaced-title {
       margin-top: 60px;
     }
-
-    /* Navbar */
     .navbar {
       background: white;
       padding: 15px 0;
@@ -47,15 +42,12 @@
       color: black !important;
       font-size: 18px;
     }
-
-    /* Hero Section */
     .hero-image {
       width: 100%;
       height: 500px;
       background: url('hero-image.jpg') center/cover no-repeat;
       position: relative;
     }
-
     .hero-text {
       position: absolute;
       bottom: 20px;
@@ -67,24 +59,18 @@
       padding: 10px 20px;
       border-radius: 5px;
     }
-
-    /* About Section */
     .about-section {
       padding: 80px 0;
       background: #f9f9f9;
     }
-
     .about-content {
       max-width: 800px;
       margin: auto;
       text-align: center;
     }
-
-    /* Classes Section */
     .classes-section {
       padding: 80px 0;
     }
-
     .course-card {
       border-radius: 10px;
       padding: 20px;
@@ -93,173 +79,172 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .course-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
-
-    /* Contact Section */
     .contact-section {
       padding: 80px 0;
       text-align: center;
     }
-
     .input-field::placeholder {
       color: #999;
     }
     .input-field {
       color: #000;
     }
+    .gallery-scroll {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      padding: 10px 0;
+    }
+    #gallery-wrapper {
+      display: inline-block;
+      white-space: nowrap;
+      min-width: 200%;
+      animation: scrollGallery 60s linear infinite;
+    }
+    #gallery-wrapper img {
+      height: 200px;
+      margin-right: 10px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    @keyframes scrollGallery {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
   </style>
 </head>
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">Vaganova technique</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="hero-image"></header>
-
-<!-- About Section -->
-<section id="about" class="about-section">
-  <div class="container about-content">
-    <h2>About Elena Vaganova Technique</h2>
-    <p>
-      If you’ve opened this page, it means you want to learn more about the ballet class, gain knowledge, develop your abilities, discover the secrets of Vaganova,
-      and explore the Russian style of ballet training and the richness that the art of ballet offers.
-    </p>
-    <p>
-      You’ve found a place where stable, steadily progressing technique is built — where knowledge is shared, potential is developed, and ballet is approached as true art
-      and creative expression. These classes not only support personal growth, but also help students prepare for professional ballet schools, competitions, and auditions.
-      We also offer teacher masterclasses and share the deeper principles of the Vaganova system. Classes are available for children, adult enthusiasts of all levels, and ballet instructors.
-    </p>
-    <h2 class="spaced-title">Online</h2>
-    <p>
-      In 2020, the entire world of education faced a major challenge — and ballet was no exception. The familiar format of in-studio classes suddenly had a competitor: the online class.
-      Now, with extensive experience teaching online, I can confidently say — it works, and it delivers results. Today, correcting mistakes must be extremely precise, and the ability to see an
-      error must be nearly flawless. I’m grateful for the circumstances that pushed us to grow and take real professional steps forward.
-    </p>
-  </div>
-</section>
-
-<!-- Classes Section -->
-<section id="classes" class="classes-section container">
-  <h2 class="text-center mb-5">Classes & Courses</h2>
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-4">
-      <div class="course-card">
-        <h4>Children’s Ballet Classes</h4>
-        <p>Structured training for children based on the Vaganova method. Focus on posture, coordination, and musicality.</p>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Vaganova technique</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="course-card">
-        <h4>Adult Ballet Beginners</h4>
-        <p>A gentle introduction to ballet for adults of all backgrounds. Build strength, grace, and confidence.</p>
+  </nav>
+
+  <header class="hero-image"></header>
+
+  <section id="about" class="about-section">
+    <div class="container about-content">
+      <h2>About Elena Vaganova Technique</h2>
+      <p>
+        If you’ve opened this page, it means you want to learn more about the ballet class, gain knowledge, develop your abilities, discover the secrets of Vaganova,
+        and explore the Russian style of ballet training and the richness that the art of ballet offers.
+      </p>
+      <p>
+        You’ve found a place where stable, steadily progressing technique is built — where knowledge is shared, potential is developed, and ballet is approached as true art
+        and creative expression. These classes not only support personal growth, but also help students prepare for professional ballet schools, competitions, and auditions.
+        We also offer teacher masterclasses and share the deeper principles of the Vaganova system. Classes are available for children, adult enthusiasts of all levels, and ballet instructors.
+      </p>
+      <h2 class="spaced-title">Online</h2>
+      <p>
+        In 2020, the entire world of education faced a major challenge — and ballet was no exception. The familiar format of in-studio classes suddenly had a competitor: the online class.
+        Now, with extensive experience teaching online, I can confidently say — it works, and it delivers results. Today, correcting mistakes must be extremely precise, and the ability to see an
+        error must be nearly flawless. I’m grateful for the circumstances that pushed us to grow and take real professional steps forward.
+      </p>
+    </div>
+  </section>
+
+  <section id="classes" class="classes-section container">
+    <h2 class="text-center mb-5">Classes & Courses</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="course-card">
+          <h4>Children’s Ballet Classes</h4>
+          <p>Structured training for children based on the Vaganova method. Focus on posture, coordination, and musicality.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="course-card">
+          <h4>Adult Ballet Beginners</h4>
+          <p>A gentle introduction to ballet for adults of all backgrounds. Build strength, grace, and confidence.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="course-card">
+          <h4>Online Technique Coaching</h4>
+          <p>Private and group online coaching with corrections, technique feedback, and personalized development.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="course-card">
+          <h4>Masterclasses for Teachers</h4>
+          <p>In-depth training on the principles of the Vaganova system, class structure, and pedagogical tools.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="course-card">
+          <h4>Audition & Competition Prep</h4>
+          <p>Coaching sessions to prepare students for entry into professional schools or ballet competitions.</p>
+        </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="course-card">
-        <h4>Online Technique Coaching</h4>
-        <p>Private and group online coaching with corrections, technique feedback, and personalized development.</p>
+  </section>
+
+  <section id="gallery" class="container my-5">
+    <h2 class="text-center">Gallery Preview</h2>
+    <div class="gallery-scroll">
+      <div id="gallery-wrapper">
+        <img src="ballet1.jpg" alt="Ballet 1">
+        <img src="ballet2.jpg" alt="Ballet 2">
+        <img src="ballet3.jpg" alt="Ballet 3">
+        <img src="ballet4.jpg" alt="Ballet 4">
+        <img src="ballet5.jpg" alt="Ballet 5">
+        <img src="ballet1.jpg" alt="Ballet 1 Duplicate">
+        <img src="ballet2.jpg" alt="Ballet 2 Duplicate">
+        <img src="ballet3.jpg" alt="Ballet 3 Duplicate">
+        <img src="ballet4.jpg" alt="Ballet 4 Duplicate">
+        <img src="ballet5.jpg" alt="Ballet 5 Duplicate">
       </div>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="course-card">
-        <h4>Masterclasses for Teachers</h4>
-        <p>In-depth training on the principles of the Vaganova system, class structure, and pedagogical tools.</p>
+    <div class="text-center mt-3">
+      <a href="gallery.html" class="btn btn-dark">Learn More</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row align-items-start">
+        <div class="col-md-5 text-start">
+          <p><strong>Phone:</strong> +7(921) 915-8541</p>
+          <p><strong>Email:</strong> artballetspb@gmail.com</p>
+        </div>
+        <div class="col-md-7">
+          <form style="max-width: 500px;">
+            <div class="mb-3">
+              <input type="text" class="form-control input-field" placeholder="Your Name" />
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control input-field" placeholder="Your Email" />
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control input-field" placeholder="Message" style="height: 120px;"></textarea>
+            </div>
+            <button class="btn btn-dark">Send</button>
+          </form>
+        </div>
       </div>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="course-card">
-        <h4>Audition & Competition Prep</h4>
-        <p>Coaching sessions to prepare students for entry into professional schools or ballet competitions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Gallery Preview -->
-<!-- Gallery Preview -->
-<section id="gallery" class="container my-5">
-  <h2 class="text-center">Gallery Preview</h2>
-  <div class="gallery-scroll">
-    <div id="gallery-wrapper">
-      <img src="ballet1.jpg" alt="Ballet 1">
-      <img src="ballet2.jpg" alt="Ballet 2">
-      <img src="ballet3.jpg" alt="Ballet 3">
-      <img src="ballet4.jpg" alt="Ballet 4">
-      <img src="ballet5.jpg" alt="Ballet 5"> 
-    </div>
-  </div>
-  <div class="text-center mt-3">
-    <a href="gallery.html" class="btn btn-dark">Learn More</a>
-  </div>
-</section>
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <div class="container">
-    <h2 class="text-center mb-4">Contact Us</h2>
-    <div class="row align-items-start">
-      <div class="col-md-5 text-start">
-        <p><strong>Phone:</strong> +7(921) 915-8541</p>
-        <p><strong>Email:</strong> artballetspb@gmail.com</p>
-      </div>
-      <div class="col-md-7">
-        <form style="max-width: 500px;">
-          <div class="mb-3">
-            <input type="text" class="form-control input-field" placeholder="Your Name" />
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control input-field" placeholder="Your Email" />
-          </div>
-          <div class="mb-3">
-            <textarea class="form-control input-field" placeholder="Message" style="height: 120px;"></textarea>
-          </div>
-          <button class="btn btn-dark">Send</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-.gallery-scroll {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px 0;
-}
-
-#gallery-wrapper {
-  display: inline-block;
-  white-space: nowrap;
-  min-width: 1200px;
-}
-
-#gallery-wrapper img {
-  height: 200px;
-  margin-right: 10px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+  </section>
 </body>
 </html>
+
 
 
