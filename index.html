@@ -14,6 +14,9 @@
       font-family: 'JHA_Times_Now_SemiLight';
       src: url('JHA_Times_Now_SemiLight.woff2') format('woff2');
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'JHA_Times_Now_SemiLight', serif;
       font-size: 16px;
@@ -112,7 +115,15 @@
         padding-top: 80px;
         z-index: 1050;
         overflow-y: auto;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+      }
+      .navbar-collapse.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
       }
       .navbar-nav .nav-item {
         border-bottom: 1px solid #eee;
@@ -183,30 +194,32 @@
 
       cards.forEach(card => observer.observe(card));
 
-      // Close mobile menu when clicking nav links
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      const closeBtn = document.querySelector('.navbar-close');
+      const toggler = document.querySelector('.navbar-toggler');
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          new bootstrap.Collapse(navbarCollapse).hide();
+        });
+      }
+
       document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-          const navbarCollapse = document.querySelector('.navbar-collapse');
-          if (navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).hide();
-          }
+          new bootstrap.Collapse(navbarCollapse).hide();
         });
       });
 
-      // Close button for mobile nav
-      const closeBtn = document.querySelector('.navbar-close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          const navbarCollapse = document.querySelector('.navbar-collapse');
-          if (navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).hide();
-          }
-        });
-      }
+      toggler.addEventListener('click', () => {
+        if (!navbarCollapse.classList.contains('show')) {
+          setTimeout(() => navbarCollapse.classList.add('show'), 10);
+        }
+      });
     });
   </script>
 </body>
 </html>
+
 
 
 
