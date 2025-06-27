@@ -271,30 +271,36 @@
 </script>
 
 </head>
+ <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggler = document.querySelector('.navbar-toggler');
     const collapse = document.querySelector('#navbarNav');
     const closeBtn = document.querySelector('.navbar-close');
     const links = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
 
-    toggler.addEventListener('click', () => {
-      collapse.classList.add('show');
-    });
+    // Show navbar on toggler click
+    if (toggler) {
+      toggler.addEventListener('click', () => {
+        collapse.classList.add('show');
+      });
+    }
 
-    closeBtn.addEventListener('click', () => {
-      collapse.classList.remove('show');
-    });
+    // Close navbar on custom close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        collapse.classList.remove('show');
+      });
+    }
 
+    // Close navbar when a link is clicked
     links.forEach(link => {
       link.addEventListener('click', () => {
         collapse.classList.remove('show');
       });
     });
-  });
-  </script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector('.navbar');
 
+    // Add 'scrolled' class on scroll
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
         navbar.classList.add('scrolled');
@@ -304,6 +310,8 @@
     });
   });
 </script>
+
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
