@@ -64,6 +64,17 @@
       padding: 40px 0;
       background: #f9f9f9;
     }
+    <section id="gallery" class="container my-5 position-relative">
+  <h2 class="text-center mb-4">Gallery</h2>
+  <button class="gallery-arrow left">&#10094;</button>
+  <button class="gallery-arrow right">&#10095;</button>
+  <div class="gallery-scroll">
+    <div id="gallery-wrapper">
+      <!-- ваши изображения -->
+    </div>
+  </div>
+</section>
+
     #gallery-wrapper {
       display: flex;
       gap: 10px;
@@ -183,6 +194,33 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+.gallery-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+}
+.gallery-arrow.left {
+  left: 10px;
+}
+.gallery-arrow.right {
+  right: 10px;
+}
+.gallery-scroll {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
 
 
   </style>
@@ -240,6 +278,15 @@
     });
   });
 </script>
+document.addEventListener("DOMContentLoaded", function () {
+  const gallery = document.querySelector('.gallery-scroll');
+  document.querySelector('.gallery-arrow.left').addEventListener('click', () => {
+    gallery.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  document.querySelector('.gallery-arrow.right').addEventListener('click', () => {
+    gallery.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+});
 
 
 <body>
