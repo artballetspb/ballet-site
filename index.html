@@ -25,14 +25,22 @@
     .spaced-title {
       margin-top: 60px;
     }
-    .navbar {
-      background: white;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
+  .navbar {
+  background: rgba(255, 255, 255, 0.95); /* slightly transparent */
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: none;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.8); /* more transparent when scrolled */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* stronger shadow on scroll */
+}
+
     .navbar-brand {
       font-size: 24px;
       font-weight: bold;
@@ -229,6 +237,19 @@
   scroll-behavior: smooth;
 }
 
+.triangle-banner {
+  background: #777; /* grey */
+  color: white;
+  padding: 20px 40px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 28px;
+  font-family: 'NeueHaasGrotText-55Roman', sans-serif;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
 
   </style>
 </head>
@@ -316,6 +337,10 @@
   </div>
 </nav>
 
+<div class="triangle-banner">
+  <h1>Vaganova technique</h1>
+</div>
+<header class="hero-image"></header>
 
   <header class="hero-image"></header>
 
